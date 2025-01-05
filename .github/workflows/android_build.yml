@@ -33,8 +33,11 @@ jobs:
           distribution: "zulu"
           cache: 'gradle'
 
+      - name: Build debug APK perm
+        run: chmod +x ./gradlew 
+
       - name: Build debug APK
-        run: ./gradlew assembleDebug --stacktrace
+        run: chmod +x ./gradlew ./gradlew assembleDebug --stacktrace
 
       - name: Upload debug APK
         uses: actions/upload-artifact@v3
